@@ -44,3 +44,7 @@ class AppTheme {
   }
 
 }
+
+extension ThemeExtract on ThemeData {
+  Color get particlesColor => this.brightness == Brightness.light ? AppTheme.lightParticlesColor : AppTheme.darkParticlesColor;
+}
