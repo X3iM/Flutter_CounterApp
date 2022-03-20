@@ -13,7 +13,7 @@ import 'logic/debug/app_bloc_observer.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
-  HydratedCubit.storage = await HydratedStorage.build(
+  HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory()
   );
   runApp(MyApp());
@@ -70,11 +70,11 @@ class _CounterAppState extends State<CounterApp> with WidgetsBindingObserver {
       title: Strings.appTitle,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode:
-          context.select((ThemeCubit themeCubit) => themeCubit.state.themeMode),
+      themeMode: context.select((ThemeCubit themeCubit) => themeCubit.state.themeMode),
       debugShowCheckedModeBanner: false,
       initialRoute: AppRouter.counter,
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
+
 }

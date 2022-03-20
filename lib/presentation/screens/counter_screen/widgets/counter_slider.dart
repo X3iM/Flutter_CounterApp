@@ -22,13 +22,11 @@ class _Stepper2State extends State<CounterSlider>
   void initState() {
     super.initState();
 
-    _controller =
-        AnimationController(vsync: this, lowerBound: -0.5, upperBound: 0.5);
+    _controller = AnimationController(vsync: this, lowerBound: -0.5, upperBound: 0.5);
     _controller.value = 0.0;
     _controller.addListener(() {});
 
-    _animation = Tween<Offset>(begin: Offset(0.0, 0.0), end: Offset(1.5, 0.0))
-        .animate(_controller);
+    _animation = Tween<Offset>(begin: Offset(0.0, 0.0), end: Offset(1.5, 0.0)).animate(_controller);
   }
 
   @override
@@ -40,8 +38,7 @@ class _Stepper2State extends State<CounterSlider>
   @override
   void didUpdateWidget(oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _animation = Tween<Offset>(begin: Offset(0.0, 0.0), end: Offset(1.5, 0.0))
-        .animate(_controller);
+    _animation = Tween<Offset>(begin: Offset(0.0, 0.0), end: Offset(1.5, 0.0)).animate(_controller);
   }
 
   @override
@@ -92,10 +89,7 @@ class _Stepper2State extends State<CounterSlider>
                         child: Icon(
                           Icons.trip_origin,
                           size:  40,
-                          color: Theme.of(context)
-                              .iconTheme
-                              .color
-                              .withOpacity(0.6),
+                          color: Theme.of(context).iconTheme.color.withOpacity(0.6),
                         ),
                       ),
                     ),
@@ -142,8 +136,7 @@ class _Stepper2State extends State<CounterSlider>
       ratio: 0.6,
     );
 
-    _controller.animateWith(
-        SpringSimulation(_kDefaultSpring, _startAnimationPosX, 0.0, 0.0));
+    _controller.animateWith(SpringSimulation(_kDefaultSpring, _startAnimationPosX, 0.0, 0.0));
   }
 }
 

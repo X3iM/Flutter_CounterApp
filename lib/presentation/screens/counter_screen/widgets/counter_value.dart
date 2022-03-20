@@ -6,10 +6,8 @@ class CounterValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-        context.select((CounterCubit counterCubit) => counterCubit.state.counterValue).toString() ,
-        style: Theme.of(context)
-            .textTheme
-            .headline1
-            .copyWith(fontWeight: FontWeight.bold, fontSize: 128));
+        context.select((CounterCubit counterCubit) => counterCubit.state.counterValue).toString(),
+        style: Theme.of(context).textTheme.headline1.copyWith(fontWeight: FontWeight.bold, fontSize: 128)
+    );
   }
 }
